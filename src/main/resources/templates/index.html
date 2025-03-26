@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="\public\css\styles.css" th:href="@{/public/css/styles.css}" rel="stylesheet"/>
+    <title>Cupcakes</title>
+</head>
+<body>
+
+<div class = "g-frontpage">
+
+    <div class ="header">
+        <div class = "picture">
+            <img src="/public/images/img.png" alt="Description of image" width="1500" height="300">
+        </div>
+    </div>
+
+    <div class = "nav-bar">
+        <div class ="nav-left">
+            <a href="#">Ordrer</a>
+            <a href="#">Kunder</a>
+            </div>
+
+        <div class ="nav-right">
+            <span th:text="${user.email}">brugernavn@email.com</span>
+        </div>
+
+    </div>
+
+        <div class = "input-fields">
+            <form action>
+
+                 <div class = "select-bottom">
+                    <label for="select-bottom">Vælg Bund </label>
+                    <select id="select-bottom" name="select-bottom" required>
+                        <option value=""disabled selected>Vælg Bund:</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Vanilla">Vanilla</option>
+                        <option value="Nutmeg">Nutmeg</option>
+                        <option value="Pistacio">Pistacio</option>
+                        <option value="Almond">Almond</option>
+
+                    </select>
+                </div>
+
+
+                <div class = "select-topping">
+                    <label for="selecttopping">Vælg topping</label>
+                    <select id="selecttopping" name="selecttopping" required>
+                        <option value=""disabled selected>Vælg Topping</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Blueberry" >Blueberry</option>
+                        <option value="Raspberry" >Raspberry</option>
+                        <option value="Crispy">Crispy</option>
+                        <option value="Strawberry">Strawberry</option>
+                        <option value="Rum/Raisin">Rum/Raisin</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Lemon">Lemon</option>
+                        <option value="Blue cheese">Blue cheese</option>
+                    </select>
+
+
+                    <br>
+                </div>
+
+                <div class = "quantity">
+                    <label for="quantity">Vælg Stk.</label>
+                    <input type = "number" id="quantity" quantity="quantity"><br>
+                </div>
+
+                <div class = "Submit">
+                    <button type = "submit">Læg i kurv</button>
+                </div>
+
+            </form>
+        </div>
+
+</div>
+
+
+
+</body>
+
+</html>

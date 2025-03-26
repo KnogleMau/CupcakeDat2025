@@ -1,0 +1,22 @@
+.header {
+    text-align: Left;
+    text-color: black;
+
+}
+
+.picture {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+        text-align: center; /* Optional: Centers text inside */
+        color: white;
+        background-color: #411a62;
+
+
+}
+
+.nav-right {
+    display: flex;
+    align-items: Center;
+    gap: 10px;
+}
