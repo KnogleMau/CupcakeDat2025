@@ -1,6 +1,8 @@
 .header {
-    text-align: Left;
+    text-align: left;
     text-color: black;
+    background-color: #51166F;
+    border-radius: 8px;
 
 }
 
@@ -10,13 +12,89 @@
         align-items: center; /* Centers vertically */
         text-align: center; /* Optional: Centers text inside */
         color: white;
-        background-color: #411a62;
+        /*background-color: #411a62;*/
 
 
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px 0px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+}
+
+.nav-left a {
+    margin-left: 30px;
+    text-decoration: none; /* Removes underline */
+    font-weight: 600; /* Makes the text a bit bolder */
 }
 
 .nav-right {
     display: flex;
     align-items: Center;
-    gap: 10px;
+    gap: 12px;
+    margin-right: 35px;
+}
+
+.input-fields {
+    background-color: #f2f2f2; /* light gray */
+    padding: 40px 60px;        /* space inside the box */
+    margin-top: 20px;          /* space between nav-bar and this section */
+    border-radius: 8px;        /* optional: rounded corners */
+    border: 1px solid #ccc;
+    min-height: 600px;
+
+}
+
+.select-bottom{
+    margin-top: 40px;
+}
+
+.select-topping{
+    padding: 0px 400px;
+    margin-top: 40px;
+}
+
+.email{
+    text-decoration: underline;
+}
+
+.balance{
+    font-size: 14px;
+    font-style: italic;
+}
+
+.cart-icon {
+    width: 46px;
+    height: auto;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-icon:hover {
+    transform: scale(1.7);
+}
+
+.submit{
+    cursor: pointer;
+}
+
+label{
+    font-size: 28px;
+}
+
+select{
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+button{
+    cursor: pointer;
 }
