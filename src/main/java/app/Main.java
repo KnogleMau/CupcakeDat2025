@@ -2,14 +2,12 @@ package app;
 
 import app.config.SessionConfig;
 import app.config.ThymeleafConfig;
-
-
-
-
+import app.controllers.CupcakeController;
 import app.persistence.ConnectionPool;
 
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
+
 import java.util.logging.Logger;
 
 public class Main {
@@ -33,9 +31,13 @@ public class Main {
             config.fileRenderer(new JavalinThymeleaf(ThymeleafConfig.templateEngine()));
         }).start(7070);
 
-        // Frontpage
-        app.get("/", ctx ->  ctx.render("index.html"));
+        //routings
 
+        // Frontpage
+        app.get("/", ctx -> ctx.render("html.html"));
+
+        // Loginpage
+        CupcakeController.routes(app, connectionPool);
 
 
     }

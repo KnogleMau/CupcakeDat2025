@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/public/css/login.css" th:href="@{/public/css/login.css}" rel="stylesheet"/>
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="header">
+    <div class="picture">
+        <img src="/public/images/img.png" alt="Description of image" width="1500" height="300">
+    </div>
+</div>
+
+
+<div class="container-login">
+    <div class="login">
+        <h2>Login</h2>
+        <div class="input-box">
+            <form method="post">
+                <input class="text-box" type="email" name="email" placeholder="indtast din email"/>
+                <input class="text-box" type="password" name="password" placeholder="indtast dit kodeord"/>
+                <button class="login-button" type="submit" formaction="/login">Log på</button>
+                <br>
+                <a class="text-box" href="#">Opret bruger</a>
+
+                <div><p th:text="${message}"></p></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
