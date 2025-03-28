@@ -13,6 +13,7 @@
     <div class ="header">
         <div class = "picture">
             <img src="/public/images/img.png" alt="Description of image" width="1500" height="300">
+
         </div>
     </div>
 
@@ -23,7 +24,10 @@
             </div>
 
         <div class ="nav-right">
-            <span th:text="${user.email}">brugernavn@email.com</span>
+            <span class="email" th:text="${user.email}">brugernavn@email.com</span>
+            <span class="balance" th:text="'Saldo: ' + ${session.user.balance} + ' kr'">Saldo: 200 kr</span>
+            <img src="/public/images/lillabasket.png" alt="Kurv" class="cart-icon"  title="Gå til indkøbskurv">
+
         </div>
 
     </div>
@@ -66,12 +70,11 @@
 
                 <div class = "quantity">
                     <label for="quantity">Vælg Stk.</label>
-                    <input type = "number" id="quantity" quantity="quantity"><br>
+                    <input type = "number" id="quantity" quantity="quantity" required><br>
                 </div>
 
-                <div class = "Submit">
                     <button type = "submit">Læg i kurv</button>
-                </div>
+
 
             </form>
         </div>
