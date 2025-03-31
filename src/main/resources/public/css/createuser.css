@@ -1,0 +1,54 @@
+body{
+    background-color: whitesmoke;
+}
+
+.header {
+    text-align: Left;
+    text-color: black;
+
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #411a62;
+    max-width: 100%;
+    height: auto;
+}
+
+.picture img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+.containerCreate {
+
+    justify-content: center; /* Centers horizontally */
+    text-align: center;
+    display: flex;
+
+}
+
+.createUser {
+    flex-direction: column;
+    background-color: white;
+    max-width: 600px;
+    width: 100%;
+    height: 500px;
+}
+
+.text-box {
+    margin-bottom: 12px;
+}
+
+.create-account {
+    color: white;
+    background-color: dodgerblue;
+    height: 28px;
+}

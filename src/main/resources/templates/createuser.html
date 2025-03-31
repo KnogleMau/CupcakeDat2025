@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="\public\css\createUser.css" th:href="@{/public/css/createUser.css}" rel="stylesheet"/>
+    <title>Cupcakes</title>
+</head>
+<body>
+
+<div class = "g-frontpage">
+
+    <div class ="header">
+        <div class = "picture">
+            <img src="/public/images/img.png" alt="Description of image" >
+        </div>
+    </div>
+</div>
+
+<div class="containerCreate">
+
+    <div class="createUser">
+        <h2>Opret en bruger</h2>
+        <form method="post">
+            <input class="text-box" type="text" name="fornavn" placeholder="indtast dit fornavn"> <br>
+            <input class="text-box" type="text" name="efternavn" placeholder="indtast dit efternavn"> <br>
+            <input class="text-box" type="number" number="number" placeholder="indtast dit telefon nr"/> <br>
+            <input class="text-box"type="email" email="email" placeholder="indtast din email"/> <br>
+            <input class="text-box" type="password" name="password" placeholder="indtast dit kodeord"/> <br>
+            <input class="text-box" type="password2" name="password" placeholder="indtast dit kodeord igen"/> <br>
+            <button class="create-account" type="submit" formaction="/login">Opret bruger</button>
+            <button class="create-account" type="submit" formaction="/login">Tilbage</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+
+</html>
