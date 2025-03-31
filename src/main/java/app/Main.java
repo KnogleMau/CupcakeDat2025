@@ -3,9 +3,15 @@ package app;
 import app.config.SessionConfig;
 import app.config.ThymeleafConfig;
 import app.controllers.CupcakeController;
+import app.entities.Bottom;
+import app.entities.Topping;
+import app.persistence.BottomMapper;
 import app.persistence.ConnectionPool;
+import app.persistence.ToppingMapper;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
+
+import java.util.List;
 import java.util.logging.Logger;
 
 public class Main {
@@ -32,7 +38,7 @@ public class Main {
         //routings
 
         // Frontpage
-        app.get("/", ctx -> ctx.render("index.html"));
+       // app.get("/", ctx -> ctx.render("index.html"));
 
         // Loginpage
         CupcakeController.routes(app, connectionPool);
