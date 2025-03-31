@@ -26,7 +26,27 @@ public class Main {
 
     public static void main(String[] args) {
 
+        try {
+            ToppingMapper mapper = new ToppingMapper();
+            List<Topping> toppings = mapper.getAllToppings();
 
+            BottomMapper mapper1 = new BottomMapper();
+            List<Bottom> bottoms = mapper1.getAllBottoms();
+
+            for (Topping t : toppings) {
+                System.out.println("ID: " + t.getId() +
+                        ", Name: " + t.getName() +
+                        ", Price: " + t.getPrice());
+            }
+
+            for (Bottom t : bottoms) {
+                System.out.println("ID: " + t.getId() +
+                        ", Name: " + t.getName() +
+                        ", Price: " + t.getPrice());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // Initializing Javalin and Jetty webserver
 
         Javalin app = Javalin.create(config -> {

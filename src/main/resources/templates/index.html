@@ -58,8 +58,18 @@
 
                     </select>
                 </div>
-
-
+-->
+                <div class = "select-topping">
+                    <label for="select-topping">Vælg Topping</label>
+                    <select id="select-topping" name="select-topping" required>
+                        <option value="" disabled selected>Vælg Topping</option>
+                        <option th:each="t : ${toppings}"
+                                th:value="${t.id}"
+                                th:text="${t.name + ' - ' + t.price + ' kr'}">
+                        </option>
+                    </select>
+                </div>
+<!--
                 <div class = "select-topping">
                     <label for="selecttopping">Vælg topping</label>
                     <select id="selecttopping" name="selecttopping" required>
@@ -77,7 +87,7 @@
 
 
                     <br>
-                </div>
+                </div> -->
 
                 <div class = "quantity">
                     <label for="quantity">Vælg Stk.</label>
