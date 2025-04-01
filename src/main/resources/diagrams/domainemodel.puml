@@ -1,0 +1,65 @@
+@startuml
+
+object website{
+cupcake
+server er ikke med
+}
+object database {
+users
+orders
+orderlines
+toppings
+bottoms
+}
+object frontpage
+object createUser
+object loginPage
+object user
+object admin
+object selectCupcakes{
+topping
+bottom
+amount
+}
+object basket{
+cupcakes with selected
+ topping, bottom and ammount
+}
+object editBasket{
+change amount
+(remove)
+}
+object order
+object payment
+object cupcake
+object topping
+object bottom
+object orderlines
+object password
+object adminsite {
+find orders
+delete orders
+deposit to users
+}
+
+website o-- database
+website *-- frontpage
+website o-- loginPage
+website o-- createUser
+website *-- user
+website o-- admin
+website *-- selectCupcakes
+selectCupcakes *-- basket
+
+basket o-- editBasket
+order *-- user
+order *-- cupcake
+order o-- payment
+cupcake *-- topping
+cupcake *-- bottom
+order *-- orderlines
+user *-- password
+admin *-- password
+admin o-- adminsite
+website o-- adminsite
+@enduml
