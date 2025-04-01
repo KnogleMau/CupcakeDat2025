@@ -72,4 +72,8 @@ public class UserMapper {
         }
     }
 
+    public static void insertMoney(){
+
+    }
+
 }
