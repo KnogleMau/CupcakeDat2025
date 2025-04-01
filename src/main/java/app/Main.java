@@ -3,6 +3,7 @@ package app;
 import app.config.SessionConfig;
 import app.config.ThymeleafConfig;
 import app.controllers.CupcakeController;
+import app.controllers.UserController;
 import app.entities.Bottom;
 import app.entities.Topping;
 import app.persistence.BottomMapper;
@@ -58,10 +59,11 @@ public class Main {
         //routings
 
         // Frontpage
+
        // app.get("/", ctx -> ctx.render("index.html"));
 
         // Loginpage
-        CupcakeController.routes(app, connectionPool);
+        UserController.cupcakeRoutes(app, connectionPool);
 
 
     }

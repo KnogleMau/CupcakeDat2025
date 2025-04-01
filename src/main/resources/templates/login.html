@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/public/css/login.css" th:href="@{/public/css/login.css}" rel="stylesheet"/>
-    <title>Title</title>
+    <title>login</title>
 </head>
 <body>
 
@@ -21,11 +21,11 @@
         <h2>Login</h2>
         <div class="input-box">
             <form method="post">
-                <input class="text-box" type="email" name="email" placeholder="indtast din email"/>
-                <input class="text-box" type="password" name="password" placeholder="indtast dit kodeord"/>
-                <button class="login-button" type="submit" formaction="/login">Log på</button>
+                <input class="text-box" type="email" name="email" placeholder="indtast din email" required/>
+                <input class="text-box" type="password" name="password" placeholder="indtast dit kodeord" required/>
+                <button class="login-button" type="submit" formaction="index.html">Log på</button>
                 <br>
-                <a class="text-box" href="#">Opret bruger</a>
+                <a class="text-box" href="createUser.html">Opret bruger</a>
 
                 <div><p th:text="${message}"></p></div>
             </form>
