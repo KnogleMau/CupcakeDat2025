@@ -1,0 +1,151 @@
+/* General Reset and Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.g-frontpage {
+    background-color: #ffffff;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background-color: #51166F;
+    border-radius: 8px;
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture img {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1500px;
+}
+
+/* Navbar */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+}
+
+.marquee-wrapper {
+    width: 1000px;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    font-size: 16px;
+    color: #51166F;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 35px;
+}
+
+.login-button {
+    background-color: #51166F;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #6b2a91;
+}
+
+/* Basket Section */
+.basket-section {
+    background-color: #f2f2f2;
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.basket-section h2 {
+    font-size: 28px;
+    color: #51166F;
+    margin-bottom: 30px;
+}
+
+/* Order Rows Style */
+.basket-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 12px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    gap: 10px;
+}
+
+.header-row {
+    background-color: #ece6f0;
+    font-weight: bold;
+}
+
+.basket-cell {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+.basket-cell:last-child {
+    flex: 0.5; /* Make the Fjern column smaller */
+}
+
+.basket-cell img {
+    width: 32px;
+    height: auto;
+    margin-bottom: 6px;
+}
+
+.basket-cell h3 {
+    margin: 5px 0;
+    color: #51166F;
+    font-size: 18px;
+}
+
+.remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.remove-btn:hover {
+    background-color: #cc0000;
+}

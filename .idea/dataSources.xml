@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+
     <data-source source="LOCAL" name="cupcakes@browser" uuid="3fb33c25-3675-4609-b7a9-beaa22281bfd">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
@@ -15,6 +16,9 @@
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="cupcakes@localhost" uuid="7cf327ac-64ff-4e42-8ce7-9ed9c3391bef">
+=======
+    <data-source source="LOCAL" name="cupcakes@localhost" uuid="3b2c44d1-bd3a-4cf8-96fd-de954be6e208">
+
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/public/csss/tyles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link href="/public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <title>Cupcakes</title>
 </head>
 <body>
@@ -24,8 +24,9 @@
             </div>
 
         <div class ="nav-right">
-            <span class="email" th:text="${user.email}">brugernavn@email.com</span>
+       <!--     <span class="email" th:text="${user.email}">brugernavn@email.com</span>
             <span class="balance" th:text="'Saldo: ' + ${session.user.balance} + ' kr'">Saldo: 200 kr</span>
+            -->
             <img src="/public/images/lillabasket.png" alt="Kurv" class="cart-icon"  title="Gå til indkøbskurv">
 
         </div>
@@ -34,7 +35,17 @@
 
         <div class = "input-fields">
             <form action>
-
+                <div class = "select-bottom">
+                <label for="select-bottom">Vælg Bund</label>
+                <select id="select-bottom" name="select-bottom" required>
+                    <option value="" disabled selected>Vælg Bund</option>
+                    <option th:each="b : ${bottoms}"
+                            th:value="${b.id}"
+                            th:text="${b.name + ' - ' + b.price + ' kr'}">
+                    </option>
+                </select>
+                </div>
+<!--
                  <div class = "select-bottom">
                     <label for="select-bottom">Vælg Bund </label>
                     <select id="select-bottom" name="select-bottom" required>
@@ -47,8 +58,18 @@
 
                     </select>
                 </div>
-
-
+-->
+                <div class = "select-topping">
+                    <label for="select-topping">Vælg Topping</label>
+                    <select id="select-topping" name="select-topping" required>
+                        <option value="" disabled selected>Vælg Topping</option>
+                        <option th:each="t : ${toppings}"
+                                th:value="${t.id}"
+                                th:text="${t.name + ' - ' + t.price + ' kr'}">
+                        </option>
+                    </select>
+                </div>
+<!--
                 <div class = "select-topping">
                     <label for="selecttopping">Vælg topping</label>
                     <select id="selecttopping" name="selecttopping" required>
@@ -66,7 +87,7 @@
 
 
                     <br>
-                </div>
+                </div> -->
 
                 <div class = "quantity">
                     <label for="quantity">Vælg Stk.</label>
