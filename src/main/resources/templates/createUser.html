@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/public/css/createUser.css" th:href="@{/public/css/createUser.css}" rel="stylesheet"/>
+  <title>CreateUser</title>
+</head>
+<body>
+
+
+<div class="header">
+  <div class="picture">
+    <img src="/public/images/img.png" alt="Description of image" width="1500" height="300">
+  </div>
+</div>
+
+
+<div class="container-createUser">
+  <div class="createUser">
+    <h2>Opret konto</h2>
+    <div class="input-box">
+      <form method="post" action="/">
+        <input class="text-box" type="text" name="firstName" placeholder="indtast dit fornavn" required/>
+        <input class="text-box" type="text" name="lastName" placeholder="indtast dit efternavn" required/>
+        <input class="text-box" type="tel" name="phoneNumber" placeholder="indtast dit telefon nummer" required/>
+        <input class="text-box" type="email" name="email" placeholder="indtast din email" required/>
+        <input class="text-box" type="password" name="password1" placeholder="indtast dit password" required/>
+        <input class="text-box" type="password" name="password2" placeholder="bekræft dit password" required/>
+        <button class="create-button" type="submit">Opret bruger</button>
+        <br>
+
+        <div><p th:text="${message}"></p></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
