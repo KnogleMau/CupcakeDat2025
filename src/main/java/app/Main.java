@@ -5,9 +5,11 @@ import app.config.ThymeleafConfig;
 import app.controllers.CupcakeController;
 import app.controllers.UserController;
 import app.entities.Bottom;
+import app.entities.Cupcake;
 import app.entities.Topping;
 import app.persistence.BottomMapper;
 import app.persistence.ConnectionPool;
+import app.persistence.CupcakeMapper;
 import app.persistence.ToppingMapper;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
@@ -26,7 +28,7 @@ public class Main {
     public static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
     public static void main(String[] args) {
-
+/*
         try {
             ToppingMapper mapper = new ToppingMapper();
             List<Topping> toppings = mapper.getAllToppings();
@@ -47,7 +49,12 @@ public class Main {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+         }
+*/
+
+
+
+
         // Initializing Javalin and Jetty webserver
 
         Javalin app = Javalin.create(config -> {
@@ -63,8 +70,8 @@ public class Main {
        // app.get("/", ctx -> ctx.render("index.html"));
 
         // Loginpage
-        UserController.cupcakeRoutes(app, connectionPool);
-
+       // UserController.cupcakeRoutes(app, connectionPool);
+        CupcakeController.routes(app, connectionPool);
 
     }
 }
