@@ -30,13 +30,6 @@ public class CupcakeController {
         ToppingMapper toppingMapper = new ToppingMapper();
         BottomMapper bottomMapper = new BottomMapper();
 
-
-        // app.get("/index", ctx ->   (ctx));
-        //app.post("/index", ctx -> asd (ctx, connectionPool));
-        //app.get("/ask", ctx -> ctx.render("answer.html"));
-
-        //}
-
         app.get("/", ctx -> {
             List<Topping> toppings = toppingMapper.getAllToppings();
             List<Bottom> bottoms = bottomMapper.getAllBottoms(); // ✅
@@ -64,34 +57,19 @@ public class CupcakeController {
                 cupcakes = new ArrayList<>();
             }
 
-            // int toppingId = Integer.parseInt(ctx.formParam("topping_id"));
-            // int bottomId = Integer.parseInt(ctx.formParam("bottom_id"));
-            // int quantity = Integer.parseInt(ctx.formParam("quantity"));
+             int toppingId = Integer.parseInt(ctx.formParam("topping_id"));
+             int bottomId = Integer.parseInt(ctx.formParam("bottom_id"));
+             int quantity = Integer.parseInt(ctx.formParam("quantity"));
 
-            String toppingId = ctx.formParam("topping_name");
-            String bottomId = ctx.formParam("bottom_name");
-            String quantity = ctx.formParam("quantity");
 
-            System.out.println(toppingId);
-            System.out.println(bottomId);
-            System.out.println(quantity);
+             cupcakes.add(new Cupcake(toppingId,bottomId,quantity));
 
-             // cupcakes.add(new Cupcake(toppingId,bottomId,quantity));
-/*
-              String toppingPrice = ctx.formParam("topping_price");
-              String bottomPrice = ctx.formParam("bottom_price");
 
-              BigDecimal topPrice = BigDecimal.valueOf(Long.parseLong(toppingPrice));
-            BigDecimal botPrice = BigDecimal.valueOf(Long.parseLong(bottomPrice));
+            System.out.println("Topping ID: " + ctx.formParam("topping_id"));
+            System.out.println("Bottom ID: " + ctx.formParam("bottom_id"));
+            System.out.println("Quantity: " + ctx.formParam("quantity"));
 
-              BigDecimal totalCupcakePrice = calculatePrice(topPrice,botPrice, quantity);
 
-            System.out.println(totalCupcakePrice);
-*/
-
-            for(int i=0; i <= cupcakes.size(); i++){
-                System.out.println(cupcakes.get(i));
-            }
             ctx.sessionAttribute("basket", cupcakes);
 
 

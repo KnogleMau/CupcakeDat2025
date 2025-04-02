@@ -5,6 +5,7 @@ import app.config.ThymeleafConfig;
 import app.controllers.CupcakeController;
 import app.controllers.UserController;
 import app.entities.Bottom;
+import app.entities.Cupcake;
 import app.entities.Topping;
 import app.persistence.BottomMapper;
 import app.persistence.ConnectionPool;
@@ -49,7 +50,8 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
          }
-         */
+*/
+
 
 
 
