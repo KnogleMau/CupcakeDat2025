@@ -30,25 +30,40 @@ public class CupcakeController {
         ToppingMapper toppingMapper = new ToppingMapper();
         BottomMapper bottomMapper = new BottomMapper();
 
-
-
-
         app.get("/", ctx -> {
+            ctx.render("frontpage.html");
+        });
+
+
+
+
+        app.get("/index", ctx -> {
             List<Topping> toppings = toppingMapper.getAllToppings();
             List<Bottom> bottoms = bottomMapper.getAllBottoms(); // ✅
 
             User user = ctx.sessionAttribute("currentUser");
             ctx.attribute("user", user); // makes ${user.email}, ${user.balance} etc available
 
+
+            List<Cupcake> cupcakes = ctx.sessionAttribute("basket");
+            if (cupcakes == null) {
+                cupcakes = new ArrayList<>();
+            }
+
+            ctx.attribute("basket", cupcakes);  // Makes the basket available in the template
             ctx.attribute("toppings", toppings);
             ctx.attribute("bottoms", bottoms); // ✅
             ctx.render("index.html");
+
+
+
+
         });
 
        //
         // app.post("login", ctx -> login(ctx, connectionPool));
        // app.get("/", ctx -> ctx.render("index.html"));
-        app.post("/", ctx -> makeCupcakes(ctx, connectionPool));
+        app.post("/index", ctx -> makeCupcakes(ctx, connectionPool));
 
 
 
@@ -89,7 +104,7 @@ public class CupcakeController {
             System.out.println(bottomName);
             System.out.println(toppingName);
 
-            ctx.redirect("/");
+            ctx.redirect("/index");
 
             return cupcakes;
         }
