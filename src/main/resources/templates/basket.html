@@ -21,8 +21,8 @@
         <div class="nav-left">
             <div class="marquee-wrapper">
                 <div class="marquee">
-                    <span>🧁 Velkommen tilbage! Se hvad du har valgt indtil nu... 🧁</span>
-                    <span>🧁 Velkommen tilbage! Se hvad du har valgt indtil nu... 🧁</span>
+                    <span>🧁 Tillykke du er næsten i mål med din bestilling! 🧁</span>
+                    <span>🧁 Nu kan du glæde dig til at smage alle de lækre cupcakes du har bestilt! 🧁</span>
                 </div>
             </div>
         </div>
@@ -56,13 +56,14 @@
             </div>
         </div>
 
-
+<!--
             <div class="basket-row header-row">
                 <div class="basket-cell">Bund</div>
                 <div class="basket-cell">Topping</div>
                 <div class="basket-cell">Antal</div>
                 <div class="basket-cell">Handling</div>
             </div>
+-->
 
             <div th:each="cupcake : ${basket}" class="basket-row">
                 <div class="basket-cell" th:text="${cupcake.bottomName}">Bund</div>

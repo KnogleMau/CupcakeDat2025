@@ -24,9 +24,10 @@
             </div>
 
         <div class ="nav-right">
-       <!--     <span class="email" th:text="${user.email}">brugernavn@email.com</span>
-            <span class="balance" th:text="'Saldo: ' + ${session.user.balance} + ' kr'">Saldo: 200 kr</span>
-            -->
+           <span class="email" th:if="${user != null}" th:text="${user.email}">brugernavn@email.com</span>
+            <span class="balance" th:if="${user != null}" th:text="'Saldo: ' + ${session.user.balance} + ' kr'">Saldo: 200 kr</span>
+
+            <a href="/basket">
             <img src="/images/lillabasket.png" alt="Kurv" class="cart-icon"  title="Gå til indkøbskurv">
             </a>
         </div>

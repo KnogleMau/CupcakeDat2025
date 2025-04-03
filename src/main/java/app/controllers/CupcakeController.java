@@ -37,6 +37,9 @@ public class CupcakeController {
             List<Topping> toppings = toppingMapper.getAllToppings();
             List<Bottom> bottoms = bottomMapper.getAllBottoms(); // ✅
 
+            User user = ctx.sessionAttribute("currentUser");
+            ctx.attribute("user", user); // makes ${user.email}, ${user.balance} etc available
+
             ctx.attribute("toppings", toppings);
             ctx.attribute("bottoms", bottoms); // ✅
             ctx.render("index.html");
@@ -46,6 +49,8 @@ public class CupcakeController {
         // app.post("login", ctx -> login(ctx, connectionPool));
        // app.get("/", ctx -> ctx.render("index.html"));
         app.post("/", ctx -> makeCupcakes(ctx, connectionPool));
+
+
 
         app.get("/basket", ctx -> {
             List<Cupcake> cupcakes = ctx.sessionAttribute("basket");
