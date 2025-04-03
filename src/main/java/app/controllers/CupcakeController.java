@@ -46,6 +46,8 @@ public class CupcakeController {
 
 
 
+
+
     }
 
 
@@ -61,14 +63,10 @@ public class CupcakeController {
              int bottomId = Integer.parseInt(ctx.formParam("bottom_id"));
              int quantity = Integer.parseInt(ctx.formParam("quantity"));
 
+             String toppingName = ToppingMapper.getToppingById(toppingId);
+            String bottomName = BottomMapper.getBottomById(bottomId);
 
-             cupcakes.add(new Cupcake(toppingId,bottomId,quantity));
-
-
-            System.out.println("Topping ID: " + ctx.formParam("topping_id"));
-            System.out.println("Bottom ID: " + ctx.formParam("bottom_id"));
-            System.out.println("Quantity: " + ctx.formParam("quantity"));
-
+             cupcakes.add(new Cupcake(toppingId,bottomId,quantity,bottomName,toppingName));
 
             ctx.sessionAttribute("basket", cupcakes);
 

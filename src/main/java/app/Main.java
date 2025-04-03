@@ -9,7 +9,7 @@ import app.entities.Cupcake;
 import app.entities.Topping;
 import app.persistence.BottomMapper;
 import app.persistence.ConnectionPool;
-import app.persistence.CupcakeMapper;
+
 import app.persistence.ToppingMapper;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
@@ -28,31 +28,6 @@ public class Main {
     public static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
     public static void main(String[] args) {
-/*
-        try {
-            ToppingMapper mapper = new ToppingMapper();
-            List<Topping> toppings = mapper.getAllToppings();
-
-            BottomMapper mapper1 = new BottomMapper();
-            List<Bottom> bottoms = mapper1.getAllBottoms();
-
-            for (Topping t : toppings) {
-                System.out.println("ID: " + t.getId() +
-                        ", Name: " + t.getName() +
-                        ", Price: " + t.getPrice());
-            }
-
-            for (Bottom t : bottoms) {
-                System.out.println("ID: " + t.getId() +
-                        ", Name: " + t.getName() +
-                        ", Price: " + t.getPrice());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-         }
-*/
-
-
 
 
         // Initializing Javalin and Jetty webserver

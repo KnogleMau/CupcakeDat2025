@@ -33,5 +33,23 @@ public class BottomMapper {
         return bottoms;
     }
 
+    public static String getBottomById(int id){
+        try {
+
+            Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection();
+            PreparedStatement ps = CP.prepareStatement("SELECT bottom_name FROM bottom");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("bottom_name");
+            }
+
+            return null;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

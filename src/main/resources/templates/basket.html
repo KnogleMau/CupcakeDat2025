@@ -56,7 +56,23 @@
             </div>
         </div>
 
-        <!-- Order rows -->
+
+            <div class="basket-row header-row">
+                <div class="basket-cell">Bund</div>
+                <div class="basket-cell">Topping</div>
+                <div class="basket-cell">Antal</div>
+                <div class="basket-cell">Handling</div>
+            </div>
+
+            <div th:each="cupcake : ${basket}" class="basket-row">
+                <div class="basket-cell" th:text="${cupcake.bottomName}">Bund</div>
+                <div class="basket-cell" th:text="${cupcake.toppingName}">Topping</div>
+                <div class="basket-cell" th:text="${cupcake.quantity}">Antal</div>
+                <div class="basket-cell">
+                </div>
+            </div>
+
+        <!-- Order rows
         <div class="basket-row">
             <div class="basket-cell">Chokolade</div>
             <div class="basket-cell">Strawberry</div>
@@ -74,6 +90,7 @@
                 <button class="remove-btn">🗑️Fjern</button>
             </div>
         </div>
+        -->
 
     </div>
 </div>
