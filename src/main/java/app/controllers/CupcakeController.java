@@ -31,22 +31,50 @@ public class CupcakeController {
         BottomMapper bottomMapper = new BottomMapper();
 
         app.get("/", ctx -> {
+            ctx.render("frontpage.html");
+        });
+
+
+
+
+        app.get("/index", ctx -> {
             List<Topping> toppings = toppingMapper.getAllToppings();
             List<Bottom> bottoms = bottomMapper.getAllBottoms(); // ✅
 
+            User user = ctx.sessionAttribute("currentUser");
+            ctx.attribute("user", user); // makes ${user.email}, ${user.balance} etc available
+
+
+            List<Cupcake> cupcakes = ctx.sessionAttribute("basket");
+            if (cupcakes == null) {
+                cupcakes = new ArrayList<>();
+            }
+
+            ctx.attribute("basket", cupcakes);  // Makes the basket available in the template
             ctx.attribute("toppings", toppings);
             ctx.attribute("bottoms", bottoms); // ✅
             ctx.render("index.html");
+
+
+
+
         });
 
        //
         // app.post("login", ctx -> login(ctx, connectionPool));
        // app.get("/", ctx -> ctx.render("index.html"));
-        app.post("/", ctx -> makeCupcakes(ctx, connectionPool));
+        app.post("/index", ctx -> makeCupcakes(ctx, connectionPool));
 
 
 
-
+        app.get("/basket", ctx -> {
+            List<Cupcake> cupcakes = ctx.sessionAttribute("basket");
+            if (cupcakes == null) {
+                cupcakes = new ArrayList<>();
+            }
+            ctx.attribute("basket", cupcakes);
+            ctx.render("basket.html"); // Sørg for at have en basket.html-side
+        });
 
     }
 
@@ -63,15 +91,20 @@ public class CupcakeController {
              int bottomId = Integer.parseInt(ctx.formParam("bottom_id"));
              int quantity = Integer.parseInt(ctx.formParam("quantity"));
 
-             String toppingName = ToppingMapper.getToppingById(toppingId);
-            String bottomName = BottomMapper.getBottomById(bottomId);
+
+            BottomMapper bottomMapper = new BottomMapper();
+            ToppingMapper toppingMapper = new ToppingMapper();
+             String toppingName = toppingMapper.getToppingById(toppingId);
+            String bottomName = bottomMapper.getBottomById(bottomId);
 
              cupcakes.add(new Cupcake(toppingId,bottomId,quantity,bottomName,toppingName));
 
             ctx.sessionAttribute("basket", cupcakes);
 
+            System.out.println(bottomName);
+            System.out.println(toppingName);
 
-            ctx.redirect("/");
+            ctx.redirect("/index");
 
             return cupcakes;
         }

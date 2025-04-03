@@ -18,37 +18,45 @@ public class ToppingMapper {
 
     public List<Topping> getAllToppings() throws SQLException {
         List<Topping> toppings = new ArrayList<>();
+        try(
         Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection();
-        PreparedStatement ps = CP.prepareStatement("SELECT * FROM topping");
-        ResultSet rs = ps.executeQuery();
+        ) {
+            PreparedStatement ps = CP.prepareStatement("SELECT * FROM topping");
+            ResultSet rs = ps.executeQuery();
 
-        while(rs.next()){
-            toppings.add(new Topping(
-                    rs.getInt("topping_id"),
-                    rs.getString("topping_name"),
-                    rs.getBigDecimal("topping_price")
-            ));
+            while (rs.next()) {
+                toppings.add(new Topping(
+                        rs.getInt("topping_id"),
+                        rs.getString("topping_name"),
+                        rs.getBigDecimal("topping_price")
+                ));
 
+            }
+        } catch(SQLException e){
+            System.out.println(e.getMessage());
         }
         return toppings;
     }
 
     public static String getToppingById(int id){
-        try {
+        try(Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection();
+            PreparedStatement ps = CP.prepareStatement("SELECT topping_name FROM topping WHERE topping_id = ?");
+            ) {
 
-            Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection();
-            PreparedStatement ps = CP.prepareStatement("SELECT topping_name FROM topping");
+
+            ps.setInt(1, id);  // 🛠 Fixer fejlen
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 return rs.getString("topping_name");
             }
 
-            return null;
+
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
+        return null;
         }
 
 

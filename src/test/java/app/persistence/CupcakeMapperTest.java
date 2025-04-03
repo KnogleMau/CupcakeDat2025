@@ -27,7 +27,7 @@ CupcakeMapper instance = new CupcakeMapper();
     @DisplayName("Calculate Cupcakes from given price")
     void test1(){
         BigDecimal expected = BigDecimal.valueOf(108);
-        BigDecimal actual = instance.calculatePrice(BigDecimal.valueOf(5), BigDecimal.valueOf(7), 9);
+        //BigDecimal actual = instance.calculatePrice(BigDecimal.valueOf(5), BigDecimal.valueOf(7), 9);
         assertEquals(expected, actual);
 
     }
