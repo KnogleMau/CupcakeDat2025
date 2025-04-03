@@ -30,6 +30,9 @@ public class CupcakeController {
         ToppingMapper toppingMapper = new ToppingMapper();
         BottomMapper bottomMapper = new BottomMapper();
 
+
+
+
         app.get("/", ctx -> {
             List<Topping> toppings = toppingMapper.getAllToppings();
             List<Bottom> bottoms = bottomMapper.getAllBottoms(); // ✅
@@ -44,9 +47,14 @@ public class CupcakeController {
        // app.get("/", ctx -> ctx.render("index.html"));
         app.post("/", ctx -> makeCupcakes(ctx, connectionPool));
 
-
-
-
+        app.get("/basket", ctx -> {
+            List<Cupcake> cupcakes = ctx.sessionAttribute("basket");
+            if (cupcakes == null) {
+                cupcakes = new ArrayList<>();
+            }
+            ctx.attribute("basket", cupcakes);
+            ctx.render("basket.html"); // Sørg for at have en basket.html-side
+        });
 
     }
 
@@ -63,13 +71,18 @@ public class CupcakeController {
              int bottomId = Integer.parseInt(ctx.formParam("bottom_id"));
              int quantity = Integer.parseInt(ctx.formParam("quantity"));
 
-             String toppingName = ToppingMapper.getToppingById(toppingId);
-            String bottomName = BottomMapper.getBottomById(bottomId);
+
+            BottomMapper bottomMapper = new BottomMapper();
+            ToppingMapper toppingMapper = new ToppingMapper();
+             String toppingName = toppingMapper.getToppingById(toppingId);
+            String bottomName = bottomMapper.getBottomById(bottomId);
 
              cupcakes.add(new Cupcake(toppingId,bottomId,quantity,bottomName,toppingName));
 
             ctx.sessionAttribute("basket", cupcakes);
 
+            System.out.println(bottomName);
+            System.out.println(toppingName);
 
             ctx.redirect("/");
 
