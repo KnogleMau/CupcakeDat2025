@@ -17,8 +17,8 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
+import static app.controllers.UserController.createUser;
+import static app.controllers.UserController.login;
 
 
 public class CupcakeController {
@@ -33,6 +33,24 @@ public class CupcakeController {
         app.get("/", ctx -> {
             ctx.render("frontpage.html");
         });
+
+        app.get("/login", ctx ->{
+
+            ctx.render("login.html");
+
+        });
+
+        app.get("/createUser", ctx ->{
+
+            ctx.render("createUser.html");
+
+        });
+
+
+        app.post("/createUser", ctx -> createUser(ctx, connectionPool));
+
+         app.post("/login", ctx -> login(ctx, connectionPool));
+
 
 
 
@@ -60,14 +78,16 @@ public class CupcakeController {
 
         });
 
-       //
-        // app.post("login", ctx -> login(ctx, connectionPool));
-       // app.get("/", ctx -> ctx.render("index.html"));
+
         app.post("/index", ctx -> makeCupcakes(ctx, connectionPool));
 
 
 
         app.get("/basket", ctx -> {
+
+            User user = ctx.sessionAttribute("currentUser");
+            ctx.attribute("user", user);
+
             List<Cupcake> cupcakes = ctx.sessionAttribute("basket");
             if (cupcakes == null) {
                 cupcakes = new ArrayList<>();

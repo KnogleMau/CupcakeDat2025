@@ -17,12 +17,7 @@ import io.javalin.Javalin;
 import io.javalin.http.Context;
 
 public class UserController {
-/*
-    public static void cupcakeRoutes(Javalin app, ConnectionPool connectionPool) {
-    app.get("/", ctx -> ctx.render("frontpage.html"));
-    app.post("/", ctx -> createUser(ctx, connectionPool));
-    }
-*/
+
     public static void login(Context ctx, ConnectionPool connectionPool) {
 
         // hent form parametre
@@ -35,7 +30,8 @@ public class UserController {
             ctx.sessionAttribute("currentUser", user); //gemmer user i den tid web applikation er tændt
 
             //hvis ja send videre
-            ctx.render(""); //Mangler siden den skal hen på
+            //ctx.render(""); //Mangler siden den skal hen på
+            ctx.redirect("/index");
 
         } catch (DatabaseException e) {
 
@@ -45,7 +41,7 @@ public class UserController {
         }
     }
 
-    private static void createUser(Context ctx, ConnectionPool connectionPool)
+    public static void createUser(Context ctx, ConnectionPool connectionPool)
     {
         // Hent form parametre
         String email = ctx.formParam("email");

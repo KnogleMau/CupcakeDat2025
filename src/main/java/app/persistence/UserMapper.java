@@ -70,6 +70,15 @@ public class UserMapper {
             }
             throw new DatabaseException(msg, e.getMessage());
         }
+        /*catch (SQLException e) {
+            System.out.println("=== FEJL VED INSERT ===");
+            e.printStackTrace(); // hele stacktrace
+            System.out.println("SQL Message: " + e.getMessage());
+            System.out.println("SQL State: " + e.getSQLState());
+            System.out.println("Vendor Error: " + e.getErrorCode());
+
+            throw new DatabaseException("SQL FEJL: " + e.getMessage(), e.getMessage());
+        }*/
     }
 
     public static void insertMoney(){
