@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" name="Changes" comment="">
+    <list default="true" id="2c36e8be-d66d-49a4-819b-dc59db6db29f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/CupcakeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/CupcakeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entities/Cupcake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entities/Cupcake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/persistence/BottomMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/persistence/BottomMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/persistence/ToppingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/persistence/ToppingMapper.java" afterDir="false" />
-    </list>
-    <list id="4ca0f134-8eb5-4e3c-aed5-a3da42b74a3b" name="Changes by thran" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/resources/public/css/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/css/basket.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/basket.html" afterDir="false" />
     </list>
@@ -19,14 +19,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="HTML File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -36,24 +28,23 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Istimereal&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Thranum"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/KnogleMau/CupcakeDat2025.git&quot;,
-    &quot;accountId&quot;: &quot;e5cf00e4-c595-4aa1-86c3-06a143d84768&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/KnogleMau/CupcakeDat2025.git",
+    "accountId": "b8599272-35b3-4b39-b730-fa06be9ff2cb"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2vFzA3ZTTwY7CYVWgxZ3q24uV2X" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2vGRFgJH05vj46f2qCs735OncpY" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -61,7 +52,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Price-Cupcakes",
+    "git-widget-placeholder": "fjern-knap-fix",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -94,30 +85,21 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" name="Changes" comment="" />
-      <created>1743755466342</created>
+      <changelist id="2c36e8be-d66d-49a4-819b-dc59db6db29f" name="Changes" comment="" />
+      <created>1743769322959</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1743755466342</updated>
-      <workItem from="1743755469838" duration="748000" />
+      <updated>1743769322959</updated>
+      <workItem from="1743769326413" duration="2271000" />
     </task>
-    <task id="LOCAL-00001" summary="Fixed code">
-      <option name="closed" value="true" />
-      <created>1743766649905</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1743766649905</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

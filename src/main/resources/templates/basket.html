@@ -41,7 +41,15 @@
     <!-- Kurv-sektion -->
     <div class="basket-section">
         <h2>Din Kurv</h2>
-
+        <div class="total-and-buy">
+            <div class="total-price">
+                <h3>Totalpris:</h3>
+                <p th:text="${totalPrice} + ' kr'">10 kr</p>
+            </div>
+            <form method="post" action="/submit-order">
+                <button type="submit" class="køb-btn">KØB</button>
+            </form>
+        </div>
         <div class="basket-row header-row">
             <div class="basket-cell">
                 <img src="/images/bottom-icon.png" alt="Bund" class="category-icon">
@@ -69,14 +77,17 @@
             </div>
 -->
 
-            <div th:each="cupcake : ${basket}" class="basket-row">
+            <div th:each="cupcake, iterStat : ${basket}" class="basket-row">
+
                 <div class="basket-cell" th:text="${cupcake.bottomName}">Bund</div>
                 <div class="basket-cell" th:text="${cupcake.toppingName}">Topping</div>
                 <div class="basket-cell" th:text="${cupcake.quantity}">Antal</div>
                 <div class="basket-cell">
+                    <form method="post" action="/remove-cupcake">
+                        <input type="hidden" name="basketIndex" th:value="${iterStat.index}">
                     <button class="remove-btn">🗑️Fjern</button>
+                    </form>
                 </div>
-
             </div>
 
         <!-- Order rows
@@ -101,9 +112,6 @@
 
     </div>
 </div>
-<div class="total-price-box">
-    <h3>Totalpris:</h3>
-    <p th:text="${totalPrice} + ' kr'">10 kr</p>
-</div>
+
 </body>
 </html>
