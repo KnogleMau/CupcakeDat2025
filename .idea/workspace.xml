@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" name="Changes" comment="View Basket">
+    <list default="true" id="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/CupcakeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/CupcakeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/entities/Cupcake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entities/Cupcake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminDisplayOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminDisplayOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/createUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/persistence/BottomMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/persistence/BottomMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/persistence/ToppingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/persistence/ToppingMapper.java" afterDir="false" />
     </list>
-    <list id="a1f944ad-f3a0-4215-b4ed-6d8401647804" name="Changes by thran" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/persistence/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/persistence/UserMapper.java" afterDir="false" />
+    <list id="4ca0f134-8eb5-4e3c-aed5-a3da42b74a3b" name="Changes by thran" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/css/basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/css/basket.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/basket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +48,6 @@
     &quot;accountId&quot;: &quot;e5cf00e4-c595-4aa1-86c3-06a143d84768&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <ranges>
-        <range start1="5" end1="6" start2="5" end2="6" changelist="a1f944ad-f3a0-4215-b4ed-6d8401647804" />
-        <range start1="13" end1="14" start2="13" end2="14" changelist="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" />
-        <range start1="22" end1="23" start2="22" end2="23" changelist="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" />
-        <range start1="25" end1="26" start2="25" end2="26" changelist="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" />
-        <range start1="27" end1="28" start2="27" end2="28" changelist="8f84071f-c406-47f8-8ccb-e4c4b2d9791d" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -78,7 +61,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rounting-M-og-A",
+    "git-widget-placeholder": "Price-Cupcakes",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -126,13 +109,18 @@
       <updated>1743755466342</updated>
       <workItem from="1743755469838" duration="748000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed code">
+      <option name="closed" value="true" />
+      <created>1743766649905</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743766649905</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="View Basket" />
-    <option name="LAST_COMMIT_MESSAGE" value="View Basket" />
   </component>
 </project>

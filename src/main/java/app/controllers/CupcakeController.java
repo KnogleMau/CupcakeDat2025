@@ -92,7 +92,14 @@ public class CupcakeController {
             if (cupcakes == null) {
                 cupcakes = new ArrayList<>();
             }
+
+            double totalPrice = 0;
+            for (Cupcake cupcake : cupcakes) {
+                totalPrice += cupcake.getTotalPrice(); // Husk at have en getTotalPrice() i din Cupcake-klasse
+            }
+
             ctx.attribute("basket", cupcakes);
+            ctx.attribute("totalPrice", totalPrice);
             ctx.render("basket.html"); // Sørg for at have en basket.html-side
         });
 
@@ -116,25 +123,29 @@ public class CupcakeController {
             ToppingMapper toppingMapper = new ToppingMapper();
              String toppingName = toppingMapper.getToppingById(toppingId);
             String bottomName = bottomMapper.getBottomById(bottomId);
+            double toppingPrice = toppingMapper.getToppingPriceById(toppingId);
+            double bottomPrice = bottomMapper.getBottomPriceById(bottomId);
 
-             cupcakes.add(new Cupcake(toppingId,bottomId,quantity,bottomName,toppingName));
+            double totalPrice = calculatePrice(toppingPrice,bottomPrice,quantity);
+
+             cupcakes.add(new Cupcake(toppingId,bottomId,quantity,bottomName,toppingName,totalPrice));
 
             ctx.sessionAttribute("basket", cupcakes);
 
             System.out.println(bottomName);
             System.out.println(toppingName);
+            System.out.println(totalPrice);
 
             ctx.redirect("/index");
 
             return cupcakes;
         }
 
-        public static BigDecimal calculatePrice(BigDecimal toppingPrice, BigDecimal bottomPrice, int quantity){
+        public static double calculatePrice(double toppingPrice,double bottomPrice, int quantity){
 
-            BigDecimal totalToppingPrice = toppingPrice.multiply(BigDecimal.valueOf(quantity));
-            BigDecimal totalBottomPrice = bottomPrice.multiply(BigDecimal.valueOf(quantity));
+          double totalPrice = (toppingPrice + bottomPrice) * quantity;
 
-            return totalToppingPrice.add(totalBottomPrice);
+        return totalPrice;
         }
 
     }

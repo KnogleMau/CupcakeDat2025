@@ -6,13 +6,17 @@ public class Cupcake {
     private int quantity;
     private String bottomName;
     private String toppingName;
+    private double totalPrice;
 
-    public Cupcake(int toppingId, int bottomId, int quantity,String bottomName, String toppingName){
+
+    public Cupcake(int toppingId, int bottomId, int quantity,String bottomName, String toppingName, double totalPrice){
         this.toppingId = toppingId;
         this.bottomId = bottomId;
         this.quantity = quantity;
         this.bottomName = bottomName;
         this.toppingName = toppingName;
+        this.totalPrice = totalPrice;
+
     }
 
     public int getToppingId() {
@@ -33,5 +37,9 @@ public class Cupcake {
 
     public String getToppingName() {
         return toppingName;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
     }
 }
