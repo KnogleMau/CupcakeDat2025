@@ -46,6 +46,17 @@ public class CupcakeController {
 
         });
 
+        app.get("/admin", ctx -> {
+
+            ctx.render("admin.html");
+
+        });
+
+        app.get("/displayOrder", ctx ->{
+
+            ctx.render("adminDisplayOrders.html");
+        });
+
 
         app.post("/createUser", ctx -> createUser(ctx, connectionPool));
 
