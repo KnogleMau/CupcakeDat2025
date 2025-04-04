@@ -1,14 +1,12 @@
 package app.controllers;
 
+import app.entities.Order;
+
 import app.entities.Cupcake;
 import app.entities.User;
 import app.exceptions.DatabaseException;
-import app.persistence.ConnectionPool;
-import app.persistence.UserMapper;
+import app.persistence.*;
 import io.javalin.Javalin;
-import io.javalin.http.Context;
-import app.persistence.ToppingMapper;
-import app.persistence.BottomMapper;
 import app.entities.Topping;
 import app.entities.Bottom;
 
@@ -29,6 +27,7 @@ public class CupcakeController {
 
         ToppingMapper toppingMapper = new ToppingMapper();
         BottomMapper bottomMapper = new BottomMapper();
+      //  AdminMapper adminMapper = new AdminMapper();
 
         app.get("/", ctx -> {
             ctx.render("frontpage.html");
@@ -59,6 +58,12 @@ public class CupcakeController {
 
 
         });
+
+      /*    app.get("/", ctx -> {
+              List<Order> orders = AdminMapper.getOrders();
+              ctx.attribute("orders", orders);
+              ctx.render("adminDisplayOrders.html");
+          });  */
 
        //
         // app.post("login", ctx -> login(ctx, connectionPool));

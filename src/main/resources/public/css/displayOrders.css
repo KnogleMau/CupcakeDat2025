@@ -1,0 +1,75 @@
+.display-orderList-primary {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.display-orderList-secondary {
+    display: block;
+    background-color: #cccccc;
+    width: 100%;
+    max-width: 600px;
+    height: 700px;
+}
+
+.show-order-button {
+    height: 35px;
+    border-radius: 10px;
+
+}
+
+table {
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+}
+th, td {
+    padding: 10px 20px;
+    text-align: left;
+}
+th {
+    font-weight: bold;
+}
+.orders th {
+    padding: 10px 20px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+}
+th, td {
+    padding: 10px 20px;
+    text-align: left;
+}
+th {
+    font-weight: bold;
+}
+.orders th {
+    padding: 10px 20px;
+}
+.show-order-link {
+    color: gray;
+    text-decoration: none;
+    font-size: 14px;
+}
+.show-order-link:hover {
+    text-decoration: underline;
+    color: black;
+}
+.display-orderList-primary {
+    margin: 20px;
+}
+.display-orderList-secondary {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
