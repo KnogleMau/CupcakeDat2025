@@ -103,6 +103,18 @@ public class CupcakeController {
             ctx.render("basket.html"); // Sørg for at have en basket.html-side
         });
 
+        app.post("/remove-cupcake", ctx -> {
+            int indexToRemove = Integer.parseInt(ctx.formParam("basketIndex"));
+            List<Cupcake> basket = ctx.sessionAttribute("basket");
+
+            if (basket != null && indexToRemove >= 0 && indexToRemove < basket.size()) {
+                basket.remove(indexToRemove);
+                ctx.sessionAttribute("basket", basket);
+            }
+
+            ctx.redirect("/basket");
+        });
+
     }
 
 

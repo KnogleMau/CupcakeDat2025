@@ -159,3 +159,40 @@ body {
     color: #51166F;
     font-weight: bold;
 }
+
+.total-and-buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7dff1;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.total-price h3,
+.total-price p {
+    margin: 0;
+    font-size: 20px;
+    color: #51166F;
+    font-weight: bold;
+}
+
+.køb-btn {
+    background-color: #51166F;
+    color: white;
+    padding: 15px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.køb-btn:hover {
+    background-color: #6b2a91;
+    transform: scale(1.05);
+}
