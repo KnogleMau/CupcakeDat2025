@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/public/css/displayOrders.css" th:href="@{/public/css/displayOrders.css}" rel="stylesheet"/>
+  <title>CreateUser</title>
+</head>
+<body>
+
+
+<div class="header">
+  <div class="picture">
+    <img src="/public/images/img.png" alt="Description of image" width="1500" height="300">
+  </div>
+</div>
+
+
+<div class="display-orderList primary">
+  <div class="display-orderList secondary">
+    <h2>Bestillinger</h2>
+    <div class="orderTable">
+      <table>
+        <tr>
+          <th class="orderTableDescription">E-mail_adresse</th>
+          <th class="orderTableDescription">Ordrenummer</th>
+          <th class="orderTableDescription">Subtotal</th>
+          <th class="orderTableDescription">Dato</th>
+        </tr>
+        <tr>
+          <td th:text="${taskOne['orderID']}"></td>
+          <td th:text="${taskOne['currentOrderID']}"></td>
+          <td th:text="${taskOne['currentTotalPrice']}"></td>
+          <td th:text="${taskOne['currentDate']}"></td>
+
+          <form th:action="@{/displayOrders}" method="post">
+            <input type="hidden" name="choice" th:value="-5">
+            <button type="submit">Tidligere viste ordre <-</button>
+          </form>
+          <form th:action="@{/displayOrders}" method="post">
+            <input type="hidden" name="choice" th:value="5">
+            <button type="submit">Flere ordre FREM-></button>
+          </form>
+          <form th:action="@{/displayOrderDetails}" method="post">
+            <input type="hidden" name="orderID" th:value="${taskOne['orderID']}">
+            <button type="submit">Se ordren</button>
+          </form>
+        </tr>
+        <tr>
+          <td th:text="${taskTwo['orderID']}"></td>
+          <td th:text="${taskTwo['currentOrderID']}"></td>
+          <td th:text="${taskTwo['currentTotalPrice']}"></td>
+          <td th:text="${taskTwo['currentDate']}"></td>
+
+          <form th:action="@{/displayOrderDetails}" method="post">
+            <input type="hidden" name="orderID" th:value="${taskTwo['orderID']}">
+            <button type="submit">Se ordren</button>
+          </form>
+        </tr>
+        <tr>
+          <td th:text="${taskThree['orderID']}"></td>
+          <td th:text="${taskThree['currentOrderID']}"></td>
+          <td th:text="${taskThree['currentTotalPrice']}"></td>
+          <td th:text="${taskThree['currentDate']}"></td>
+
+          <form th:action="@{/displayOrderDetails}" method="post">
+            <input type="hidden" name="orderID" th:value="${taskThree['orderID']}">
+            <button type="submit">Se ordren</button>
+          </form>
+        </tr>
+        <tr>
+          <td th:text="${taskFour['orderID']}"></td>
+          <td th:text="${taskFour['currentOrderID']}"></td>
+          <td th:text="${taskFour['currentTotalPrice']}"></td>
+          <td th:text="${taskFour['currentDate']}"></td>
+
+          <form th:action="@{/displayOrderDetails}" method="post">
+            <input type="hidden" name="orderID" th:value="${taskFour['orderID']}">
+            <button type="submit">Se ordren</button>
+          </form>
+        </tr>
+        <tr>
+          <td th:text="${taskFive['orderID']}"></td>
+          <td th:text="${taskFive['currentOrderID']}"></td>
+          <td th:text="${taskFive['currentTotalPrice']}"></td>
+          <td th:text="${taskFive['currentDate']}"></td>
+
+          <form th:action="@{/displayOrderDetails}" method="post">
+            <input type="hidden" name="orderID" th:value="${taskFive['orderID']}">
+            <button type="submit">Se ordren</button>
+          </form>
+        </tr>
+
+
+      </table>
+      <div th:if="${taskSix}">
+      <table>
+        <tr>
+          <th class="orderTableDescription">E-mail_adresse</th>
+          <th class="orderTableDescription">Topping</th>
+          <th class="orderTableDescription">Bund</th>
+          <th class="orderTableDescription">Antal</th>
+        </tr>
+        <tr>
+          <td th:text="${taskSix['orderID']}"></td>
+          <td th:text="${taskSix['toppingName']}"></td>
+          <td th:text="${taskSix['bottomName']}"></td>
+          <td th:text="${taskSix['quantity']}"></td>
+        </tr>
+
+      </table>
+</div>
+
+        <div><p th:text="${message}"></p></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

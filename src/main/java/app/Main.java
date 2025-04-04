@@ -6,12 +6,15 @@ import app.controllers.CupcakeController;
 import app.controllers.UserController;
 import app.entities.Bottom;
 import app.entities.Topping;
+import app.persistence.AdminMapper;
 import app.persistence.BottomMapper;
 import app.persistence.ConnectionPool;
 import app.persistence.ToppingMapper;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
 
+import java.lang.reflect.InaccessibleObjectException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -63,7 +66,17 @@ public class Main {
        // app.get("/", ctx -> ctx.render("index.html"));
 
         // Loginpage
-        UserController.cupcakeRoutes(app, connectionPool);
+  //      UserController.cupcakeRoutes(app, connectionPool);
+
+     UserController.adminRoutes(app, connectionPool);
+
+
+/*try {
+    AdminMapper.getOrders();
+}
+catch (SQLException s) {
+    System.out.println("could not connect");
+}*/
 
 
     }
