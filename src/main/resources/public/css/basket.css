@@ -149,3 +149,13 @@ body {
 .remove-btn:hover {
     background-color: #cc0000;
 }
+
+.total-price-box {
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 22px;
+    background-color: #e7dff1;
+    border-radius: 8px;
+    color: #51166F;
+    font-weight: bold;
+}
