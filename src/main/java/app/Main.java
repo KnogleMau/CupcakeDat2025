@@ -46,7 +46,8 @@ public class Main {
 
         // Loginpage
        // UserController.cupcakeRoutes(app, connectionPool);
-        CupcakeController.routes(app, connectionPool);
+      //  CupcakeController.routes(app, connectionPool);
+       // UserController.adminRoutes(app, connectionPool);
 
     }
 }
