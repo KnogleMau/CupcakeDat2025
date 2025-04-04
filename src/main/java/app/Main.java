@@ -38,16 +38,8 @@ public class Main {
             config.fileRenderer(new JavalinThymeleaf(ThymeleafConfig.templateEngine()));
         }).start(7070);
 
-        //routings
+        CupcakeController.routes(app, connectionPool);
 
-        // Frontpage
-
-       // app.get("/", ctx -> ctx.render("index.html"));
-
-        // Loginpage
-       // UserController.cupcakeRoutes(app, connectionPool);
-      //  CupcakeController.routes(app, connectionPool);
-       // UserController.adminRoutes(app, connectionPool);
 
     }
 }

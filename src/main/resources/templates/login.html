@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/public/css/login.css" th:href="@{/public/css/login.css}" rel="stylesheet"/>
+    <link href="/css/login.css" th:href="@{/css/login.css}" rel="stylesheet"/>
     <title>login</title>
 </head>
 <body>
@@ -11,7 +11,7 @@
 
 <div class="header">
     <div class="picture">
-        <img src="/public/images/img.png" alt="Description of image" width="1500" height="300">
+        <img src="/images/img.png" alt="Description of image" width="1500" height="300">
     </div>
 </div>
 
@@ -20,12 +20,12 @@
     <div class="login">
         <h2>Login</h2>
         <div class="input-box">
-            <form method="post">
+            <form method="post" action="/login">
                 <input class="text-box" type="email" name="email" placeholder="indtast din email" required/>
                 <input class="text-box" type="password" name="password" placeholder="indtast dit kodeord" required/>
-                <button class="login-button" type="submit" formaction="index.html">Log på</button>
+                <button class="login-button" type="submit">Log på</button>
                 <br>
-                <a class="text-box" href="createUser.html">Opret bruger</a>
+                <a class="text-box" href="/createUser">Opret bruger</a>
 
                 <div><p th:text="${message}"></p></div>
             </form>

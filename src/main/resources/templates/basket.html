@@ -28,9 +28,13 @@
         </div>
 
         <div class="nav-right">
+            <span class="email" th:if="${user != null}" th:text="${user.email}">brugernavn@email.com</span>
+            <span class="balance" th:if="${user != null}" th:text="'Saldo: ' + ${user.balance} + ' kr'">Saldo: 200 kr</span>
+
             <a href="/index">
                 <button type="button" class="login-button">Tilbage</button>
             </a>
+
         </div>
     </div>
 

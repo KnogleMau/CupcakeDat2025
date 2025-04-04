@@ -19,13 +19,13 @@
 
     <div class = "nav-bar">
         <div class ="nav-left">
-            <a href="#">Ordrer</a>
-            <a href="#">Kunder</a>
+            <!-- <a href="#">Ordrer</a>   This needs to be something else.
+            <a href="#">Kunder</a>        This needs to be something else.          -->
             </div>
 
         <div class ="nav-right">
            <span class="email" th:if="${user != null}" th:text="${user.email}">brugernavn@email.com</span>
-            <span class="balance" th:if="${user != null}" th:text="'Saldo: ' + ${session.user.balance} + ' kr'">Saldo: 200 kr</span>
+            <span class="balance" th:if="${user != null}" th:text="'Saldo: ' + ${user.balance} + ' kr'">Saldo: 200 kr</span>
 
             <a href="/basket">
             <img src="/images/lillabasket.png" alt="Kurv" class="cart-icon"  title="Gå til indkøbskurv">
