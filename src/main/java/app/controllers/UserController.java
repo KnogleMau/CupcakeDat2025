@@ -17,12 +17,12 @@ import java.util.List;
 
 
 public class UserController {
-
+/*
     public static void cupcakeRoutes(Javalin app, ConnectionPool connectionPool) {
-    app.get("/", ctx -> ctx.render("createUser.html"));
+    app.get("/", ctx -> ctx.render("frontpage.html"));
     app.post("/", ctx -> createUser(ctx, connectionPool));
     }
-
+*/
     public static void login(Context ctx, ConnectionPool connectionPool) {
 
         // hent form parametre
