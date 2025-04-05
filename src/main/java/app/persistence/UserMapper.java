@@ -49,7 +49,6 @@ public class UserMapper {
         try ( Connection connection = connectionPool.getConnection();
               PreparedStatement ps = connection.prepareStatement(sql)
         ) {
-
             ps.setString(1, email);
             ps.setString(2, password);
             ps.setString(3, firstName);
@@ -83,6 +82,32 @@ public class UserMapper {
 
     public static void insertMoney(){
 
+    }
+
+    public static boolean userType(String email, ConnectionPool connectionPool) throws DatabaseException {
+        boolean adminStatus = false;
+
+        String sql = "select admin from users where email=?";
+
+        try (
+                Connection connection = connectionPool.getConnection();
+                PreparedStatement ps = connection.prepareStatement(sql);
+        ) {
+            ps.setString(1, email);
+
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                 adminStatus = rs.getBoolean("admin");
+
+            } else {
+                throw new DatabaseException("Fejl i login. Prøv igen");
+            }
+        } catch (SQLException | DatabaseException e) {
+            throw new DatabaseException("DB fejl", e.getMessage());
+        }
+
+return adminStatus;
     }
 
 }
