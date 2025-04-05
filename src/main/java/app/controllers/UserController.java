@@ -78,46 +78,6 @@ public class UserController {
         }
 
     }
-    public static void adminRoutes(Javalin app, ConnectionPool connectionPool) {
-
-        app.get("/", ctx -> {
-            int startPoint = ctx.sessionAttribute("startPoint") != null ? ctx.sessionAttribute("startPoint") : 0;
-            if (ctx.sessionAttribute("choice") == null) {
-                ctx.sessionAttribute("choice", 0);}
-            displayOrders(startPoint, ctx, connectionPool);
-            ctx.render("adminDisplayOrders.html");});
-
-        app.post("/displayOrderDetails", ctx -> {
-            String requestedOrderID = ctx.formParam("orderID");
-            Integer startPoint = ctx.sessionAttribute("startPoint");
-            if (startPoint == null) {
-                startPoint = 0;
-            }
-            String userChoise = ctx.formParam("choice");
-            int userChoises = userChoise != null ? Integer.parseInt(userChoise) : 0;
-            startPoint += userChoises;
-            ctx.sessionAttribute("startPoint", startPoint);
-
-            displayOrders(startPoint, ctx, connectionPool);
-            int requestedOrderIdNumber = Integer.parseInt(requestedOrderID);
-            displayOrderDetails(requestedOrderIdNumber, ctx, connectionPool);
-
-            ctx.render("adminDisplayOrders.html");});
-
-        app.post("/displayOrders", ctx -> {
-            String requestedOrderID = ctx.formParam("orderID");
-            Integer startPoint = ctx.sessionAttribute("startPoint");
-            if (startPoint == null) {
-                startPoint = 0;
-            }
-            String userChoise = ctx.formParam("choice");
-            int userChoises = userChoise != null ? Integer.parseInt(userChoise) : 0;
-            startPoint += userChoises;
-            ctx.sessionAttribute("startPoint", startPoint);
-
-            displayOrders(startPoint, ctx, connectionPool);
-            ctx.render("adminDisplayOrders.html");});
-    }
 
     public static void displayOrders(int startPoint, Context ctx, ConnectionPool connectionPool)
     {
@@ -126,7 +86,6 @@ public class UserController {
         BigDecimal currentTotalPrice;
         String currentDate;
 
-        try {
             List<Order> cupcakeOrders = AdminMapper.getOrders();
             if(startPoint > (cupcakeOrders.size() - 5)){
                 startPoint = cupcakeOrders.size() - 5;
@@ -178,16 +137,11 @@ public class UserController {
             ctx.attribute("taskFive", taskFiveValues);
         }
 
-        catch(SQLException e){
-            ctx.attribute("Der er ingen ordre i databasen.");
-            ctx.render("admin.html");  //Skal ændres
-        }
-    }
 
 
     public static void displayOrderDetails(int orderID, Context ctx, ConnectionPool connectionPool) {
 
-        try { List<OrderDetails> orderDetails1 = AdminMapper.getOrderDetails(orderID);
+         List<OrderDetails> orderDetails1 = AdminMapper.getOrderDetails(orderID);
 
             OrderDetails currentOrderDetails;
             currentOrderDetails = orderDetails1.get(0);
@@ -203,12 +157,6 @@ public class UserController {
             taskSixValues.put("quantity", currentOrderDetails.getQuantity());
 
             ctx.attribute("taskSix", taskSixValues);
-        }
-        catch(SQLException e){
-            ctx.attribute("Der er ingen ordre i databasen.");
-            ctx.render("admin.html");  //Skal ændres
-        }
-
     }
 }
 
