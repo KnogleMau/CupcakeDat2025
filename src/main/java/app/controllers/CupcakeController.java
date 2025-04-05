@@ -17,8 +17,7 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
-import static app.controllers.UserController.createUser;
-import static app.controllers.UserController.login;
+import static app.controllers.UserController.*;
 
 
 public class CupcakeController {
@@ -52,19 +51,48 @@ public class CupcakeController {
 
         });
 
-        app.get("/displayOrder", ctx ->{
+        app.get("/displayOrder", ctx -> {
+            int startPoint = ctx.sessionAttribute("startPoint") != null ? ctx.sessionAttribute("startPoint") : 0;
+            if (ctx.sessionAttribute("choice") == null) {
+                ctx.sessionAttribute("choice", 0);}
+            displayOrders(startPoint, ctx, connectionPool);
+            ctx.render("adminDisplayOrders.html");});
 
-            ctx.render("adminDisplayOrders.html");
-        });
+        app.post("/displayOrderDetails", ctx -> {
+            String requestedOrderID = ctx.formParam("orderID");
+            Integer startPoint = ctx.sessionAttribute("startPoint");
+            if (startPoint == null) {
+                startPoint = 0;
+            }
+            String userChoise = ctx.formParam("choice");
+            int userChoises = userChoise != null ? Integer.parseInt(userChoise) : 0;
+            startPoint += userChoises;
+            ctx.sessionAttribute("startPoint", startPoint);
+
+            displayOrders(startPoint, ctx, connectionPool);
+            int requestedOrderIdNumber = Integer.parseInt(requestedOrderID);
+            displayOrderDetails(requestedOrderIdNumber, ctx, connectionPool);
+
+            ctx.render("adminDisplayOrders.html");});
+
+        app.post("/displayOrders", ctx -> {
+            String requestedOrderID = ctx.formParam("orderID");
+            Integer startPoint = ctx.sessionAttribute("startPoint");
+            if (startPoint == null) {
+                startPoint = 0;
+            }
+            String userChoise = ctx.formParam("choice");
+            int userChoises = userChoise != null ? Integer.parseInt(userChoise) : 0;
+            startPoint += userChoises;
+            ctx.sessionAttribute("startPoint", startPoint);
+
+            displayOrders(startPoint, ctx, connectionPool);
+            ctx.render("adminDisplayOrders.html");});
 
 
         app.post("/createUser", ctx -> createUser(ctx, connectionPool));
 
          app.post("/login", ctx -> login(ctx, connectionPool));
-
-
-
-
 
         app.get("/index", ctx -> {
             List<Topping> toppings = toppingMapper.getAllToppings();
@@ -84,15 +112,9 @@ public class CupcakeController {
             ctx.attribute("bottoms", bottoms); // ✅
             ctx.render("index.html");
 
-
-
-
         });
 
-
         app.post("/index", ctx -> makeCupcakes(ctx, connectionPool));
-
-
 
         app.get("/basket", ctx -> {
 
@@ -127,8 +149,6 @@ public class CupcakeController {
         });
 
     }
-
-
 
         public static List<Cupcake> makeCupcakes(Context ctx, ConnectionPool connectionPool){
 

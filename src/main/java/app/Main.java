@@ -39,7 +39,5 @@ public class Main {
         }).start(7070);
 
         CupcakeController.routes(app, connectionPool);
-
-
     }
 }

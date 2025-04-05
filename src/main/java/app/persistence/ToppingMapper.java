@@ -43,16 +43,12 @@ public class ToppingMapper {
             PreparedStatement ps = CP.prepareStatement("SELECT topping_name FROM topping WHERE topping_id = ?");
             ) {
 
-
             ps.setInt(1, id);  // 🛠 Fixer fejlen
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 return rs.getString("topping_name");
             }
-
-
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -63,22 +59,15 @@ public class ToppingMapper {
         try(Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection();
             PreparedStatement ps = CP.prepareStatement("SELECT topping_price FROM topping WHERE topping_id = ?")
         ) {
-
-
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 return rs.getDouble("topping_price");
             }
-
-
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return id;
     }
-
-
 }
