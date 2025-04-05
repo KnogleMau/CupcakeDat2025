@@ -53,21 +53,16 @@ public class BottomMapper {
                 return rs.getString("bottom_name");
             }
 
-
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return null;
     }
 
-
     public static double getBottomPriceById(int id){
         try(Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection();
-            PreparedStatement ps = CP.prepareStatement("SELECT bottom_price FROM bottom WHERE bottom_id = ?")
-        ) {
-
-
+            PreparedStatement ps = CP.prepareStatement("SELECT bottom_price FROM bottom WHERE bottom_id = ?"))
+        {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
@@ -75,13 +70,9 @@ public class BottomMapper {
                 return rs.getDouble("bottom_price");
             }
 
-
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return id;
     }
-
-
 }

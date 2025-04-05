@@ -94,10 +94,6 @@ public class CupcakeController {
 
          app.post("/login", ctx -> login(ctx, connectionPool));
 
-
-
-
-
         app.get("/index", ctx -> {
             List<Topping> toppings = toppingMapper.getAllToppings();
             List<Bottom> bottoms = bottomMapper.getAllBottoms(); // ✅
@@ -116,15 +112,9 @@ public class CupcakeController {
             ctx.attribute("bottoms", bottoms); // ✅
             ctx.render("index.html");
 
-
-
-
         });
 
-
         app.post("/index", ctx -> makeCupcakes(ctx, connectionPool));
-
-
 
         app.get("/basket", ctx -> {
 
@@ -159,8 +149,6 @@ public class CupcakeController {
         });
 
     }
-
-
 
         public static List<Cupcake> makeCupcakes(Context ctx, ConnectionPool connectionPool){
 
