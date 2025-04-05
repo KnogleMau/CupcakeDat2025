@@ -31,7 +31,11 @@ public class UserController {
 
             //hvis ja send videre
             //ctx.render(""); //Mangler siden den skal hen på
-            ctx.redirect("/index");
+            if(UserMapper.userType(email, connectionPool) == false){
+                ctx.render("/index.html"); }//Mangler siden den skal hen på
+            else if(UserMapper.userType(email, connectionPool) == true){
+                ctx.render("/admin.html");
+            }
 
         } catch (DatabaseException e) {
 
