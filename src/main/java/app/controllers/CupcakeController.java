@@ -160,8 +160,6 @@ public class CupcakeController {
 
     }
 
-
-
         public static List<Cupcake> makeCupcakes(Context ctx, ConnectionPool connectionPool){
 
             List<Cupcake> cupcakes = ctx.sessionAttribute("basket");
