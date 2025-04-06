@@ -12,6 +12,7 @@ import app.persistence.BottomMapper;
 import app.entities.Topping;
 import app.entities.Bottom;
 
+import java.lang.reflect.InaccessibleObjectException;
 import java.math.BigDecimal;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -45,11 +46,15 @@ public class CupcakeController {
 
         });
 
-        app.get("/admin", ctx -> {
+        app.post("/admin", ctx -> {
 
-            ctx.render("admin.html");
+            ctx.render("/admin.html");
 
         });
+
+     /*   app.get("/backToAdmin", ctx -> {
+            ctx.render("admin.html");
+                });  */
 
         app.get("/displayOrder", ctx -> {
             int startPoint = ctx.sessionAttribute("startPoint") != null ? ctx.sessionAttribute("startPoint") : 0;
@@ -115,9 +120,6 @@ public class CupcakeController {
             ctx.attribute("toppings", toppings);
             ctx.attribute("bottoms", bottoms); // ✅
             ctx.render("index.html");
-
-
-
 
         });
 
