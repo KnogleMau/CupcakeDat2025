@@ -55,7 +55,6 @@ return orders;
     }
 
     public static List<OrderDetails> getOrderDetails(int orderID) {
-        int orderId;
 
         String toppingId = "";
         String bottomId = "";
@@ -77,6 +76,7 @@ return orders;
 
                 OrderDetails orderDetail = new OrderDetails(orderID, toppingId, bottomId, quantity);
                 orderDetailList.add(orderDetail);
+
             }
         }
         catch(SQLException e) {

@@ -2,6 +2,7 @@ package app.controllers;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import app.persistence.AdminMapper;
@@ -137,27 +138,27 @@ public class UserController {
             ctx.attribute("taskFive", taskFiveValues);
         }
 
-
-
     public static void displayOrderDetails(int orderID, Context ctx, ConnectionPool connectionPool) {
 
-         List<OrderDetails> orderDetails1 = AdminMapper.getOrderDetails(orderID);
+        List<OrderDetails> orderDetails1 = AdminMapper.getOrderDetails(orderID);
+        ArrayList<HashMap<String, Object>> taskSixObjects = new ArrayList<>();
 
-            OrderDetails currentOrderDetails;
-            currentOrderDetails = orderDetails1.get(0);
-            String name=  currentOrderDetails.getBottomName();
+        OrderDetails currentOrderDetails;
+        for(int i = 0; i < orderDetails1.size(); i++) {
+            currentOrderDetails = orderDetails1.get(i);
+            HashMap<String, Object> cupcakeDetails = new HashMap<>();
+            cupcakeDetails.put("orderID", currentOrderDetails.getOrderId());
+            cupcakeDetails.put("toppingName", currentOrderDetails.getToppingName());
+            cupcakeDetails.put("bottomName", currentOrderDetails.getBottomName());
+            cupcakeDetails.put("quantity", currentOrderDetails.getQuantity());
+            taskSixObjects.add(cupcakeDetails);
+        }
 
-            int number = currentOrderDetails.getQuantity();
+        ctx.attribute("taskSix", taskSixObjects);
 
-            HashMap<String, Object> taskSixValues = new HashMap<>();
-            taskSixValues.put("orderID", currentOrderDetails.getOrderId());
-            taskSixValues.put("toppingName", currentOrderDetails.getToppingName());
-            taskSixValues.put("bottomName", currentOrderDetails.getBottomName());
-
-            taskSixValues.put("quantity", currentOrderDetails.getQuantity());
-
-            ctx.attribute("taskSix", taskSixValues);
     }
+
+
 }
 
 
