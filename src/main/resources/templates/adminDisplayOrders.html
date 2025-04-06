@@ -11,7 +11,7 @@
 
 <div class="header">
   <div class="picture">
-    <img src="/images/img.png" alt="Description of image" width="1500" height="300">
+    <img src="/images/img.png" alt="Description of image" width="1000" height="200">
   </div>
 </div>
 <div class="display-orderList primary">
@@ -116,12 +116,14 @@
             <td th:text="${taskSixObjects.toppingName}"></td>
             <td th:text="${taskSixObjects.bottomName}"></td>
             <td th:text="${taskSixObjects.quantity}"></td>
-
               <td colspan="4">
-                  <label for="checkbox" class="checkbox-label">
-                      <input type="checkbox" id="checkbox" name="checkbox" class="styled-checkbox">
+                  <label class="checkbox-label">
+                      <input type="checkbox" th:name="'checkbox' + ${taskSixObjects.orderID}" class="styled-checkbox">
                       <span class="checkbox-custom"></span>Udført
                   </label>
+              </label>
+
+
               </td>
           </tr>
 
