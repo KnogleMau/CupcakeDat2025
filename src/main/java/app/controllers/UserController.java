@@ -155,9 +155,7 @@ public class UserController {
         }
 
         ctx.attribute("taskSix", taskSixObjects);
-
     }
-
 
 }
 
