@@ -111,11 +111,12 @@
             <th class="orderTableDescription">Bund</th>
             <th class="orderTableDescription">Antal</th>
           </tr>
-          <tr>
-            <td th:text="${taskSix['orderID']}"></td>
-            <td th:text="${taskSix['toppingName']}"></td>
-            <td th:text="${taskSix['bottomName']}"></td>
-            <td th:text="${taskSix['quantity']}"></td>
+          <tr th:each="taskSixObjects : ${taskSix}">
+            <td th:text="${taskSixObjects.orderID}"></td>
+            <td th:text="${taskSixObjects.toppingName}"></td>
+            <td th:text="${taskSixObjects.bottomName}"></td>
+            <td th:text="${taskSixObjects.quantity}"></td>
+
               <td colspan="4">
                   <label for="checkbox" class="checkbox-label">
                       <input type="checkbox" id="checkbox" name="checkbox" class="styled-checkbox">
