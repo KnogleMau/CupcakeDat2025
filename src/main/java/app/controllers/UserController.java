@@ -82,14 +82,15 @@ public class UserController {
 
     public static void displayOrders(int startPoint, Context ctx, ConnectionPool connectionPool)
     {
-        int currentUserID;
-        int currentOrderID;
-        BigDecimal currentTotalPrice;
-        String currentDate;
 
             List<Order> cupcakeOrders = AdminMapper.getOrders();
-            if(startPoint > (cupcakeOrders.size() - 5)){
-                startPoint = cupcakeOrders.size() - 5;
+            if(startPoint > (cupcakeOrders.size() - 5)|| startPoint < 0){
+                if(startPoint < 0){
+                    startPoint = 0;
+                }
+                else {
+                    startPoint = cupcakeOrders.size() - 5;
+                }
             }
 
             Order currentOrderOne;
