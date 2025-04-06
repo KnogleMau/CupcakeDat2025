@@ -26,7 +26,8 @@ public class AdminMapper {
         String moneyToCleanString;
         List<Order> orders = new ArrayList<>();
 try(
-        Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection(); ) {
+        Connection CP = ConnectionPool.getInstance(USER, PASSWORD, URL, DB).getConnection();
+        ) {
     PreparedStatement ps = CP.prepareStatement("SELECT * FROM orders");
 
     ResultSet rs = ps.executeQuery();
